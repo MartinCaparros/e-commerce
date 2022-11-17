@@ -9,75 +9,77 @@ import {
     SimpleSection,
     ProductSection,
     MainProductBanner,
-    CardContainer
+    CardContainer,
+    DonationBanner,
+    DataBanner,
+    PaymentLayout,
+    HeadBanner
 }
 from '../views';
 import 'bootstrap/dist/css/bootstrap.css';
 import { theme } from '../styled/index'; 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
     return (
-        <>
-            <div style={{position:'sticky', zIndex:'99'}}>
-                <HomeLogo/>
-                <Banner 
-                    height={'30px'}
-                    width={'100%'}
-                    backgroundColor={'black'}
-                    textAlign={'center'}
-                    color={'#fff'}
-                    fontWeight={700}
-                    fontSize={'13px'}
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    text={'🔥 10% OFF EXTRA 🔥 pagando por transferencia con el cupón "CALMFERENCIA"'}
-                />
-                <NavigationBar/>
-                <Banner 
-                    height={'40px'}
-                    width={'100%'}
-                    backgroundColor={props => theme.violetCalm}
-                    textAlign={'center'}
-                    color={'#fff'}
-                    fontWeight={700}
-                    fontSize={'1rem'}
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    text={'El colchón de tus sueños viene con almohadas de 🎁 REGALO 🎁 ¡No te lo pierdas! Ver colchones 🤩'}
-                />
-            </div>
-            <main>
-                <MainBanner
-                    backgroundImage='https://calmessimple.com.ar/wp-content/uploads/2022/10/banner-almohadas-de-regalo2.webp'
-                    date={'hasta el 23 de octubre'}
-                    mainInfo = {{important: 'almohadas de regalo', secondary: 'comprando tu colchón'}}
-                />
-                <Banner
-                    height={'90px'}
-                    width={'100%'}
-                    backgroundColor={props => theme.strongOrangeCalm}
-                    textAlign={'center'}
-                    color={'#fff'}
-                    fontWeight={200}
-                    fontSize={'2rem'}
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    image={'https://calmessimple.com.ar/wp-content/uploads/2022/08/banner-beneficios-nuevo-3%402x.webp'}
-                />
-                <AwardsBanner/>
-                <PromotionBanner/>
-                <SimpleSection/>
-                <ProductSection/>
-                <MainProductBanner/>
-                <CardContainer
-                    text = {{normal:'completa tu descanso', important: 'ideal'}}
-                />
-            </main>
-            <Footer/>
-        </>
+        <Router>
+            <Switch>
+                <Route exact path='/pago'>
+                    <PaymentLayout>TEST</PaymentLayout>
+                </Route>
+                <Route path='/'>
+                    <header>
+                        <HomeLogo/>
+                        <HeadBanner 
+                            bannerId={'clajrs2ey09tr0aizo8xiz2ei'}
+                        />
+                        <NavigationBar/>
+                        <HeadBanner
+                            bannerId={'clajrvd5s0bht0aiz7biogo88'}
+                        />
+                    </header>
+                    <Switch>
+                        <Route path='/' exact>
+                            <main>
+                                <MainBanner
+                                    backgroundImage='https://calmessimple.com.ar/wp-content/uploads/2022/10/banner-almohadas-de-regalo2.webp'
+                                    date={'hasta el 23 de octubre'}
+                                    mainInfo = {{important: 'almohadas de regalo', secondary: 'comprando tu colchón'}}
+                                />
+                                <Banner
+                                    height={'90px'}
+                                    width={'100%'}
+                                    backgroundColor={props => theme.strongOrangeCalm}
+                                    textAlign={'center'}
+                                    color={'#fff'}
+                                    fontWeight={200}
+                                    fontSize={'2rem'}
+                                    display={'flex'}
+                                    justifyContent={'center'}
+                                    alignItems={'center'}
+                                    image={'https://calmessimple.com.ar/wp-content/uploads/2022/08/banner-beneficios-nuevo-3%402x.webp'}
+                                />
+                                <AwardsBanner/>
+                                <PromotionBanner/>
+                                <SimpleSection/>
+                                <ProductSection/>
+                                <MainProductBanner/>
+                                <CardContainer
+                                    text = {{normal:'completa tu descanso', important: 'ideal'}}
+                                />
+                                <DonationBanner/>
+                                <DataBanner/>
+                            </main>
+                        </Route>
+                        <Route path='/colchón'>
+                            <h1>Colchones</h1>
+                        </Route>
+                        <Route path='/*'>404</Route>
+                    </Switch>
+                    <Footer/>    
+                </Route>
+            </Switch>
+        </Router>
     );
 }
 

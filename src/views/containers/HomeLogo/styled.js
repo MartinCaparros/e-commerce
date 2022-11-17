@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../styled";
 
-export const StyledContainer = styled.a`
+export const StyledContainer = styled(Link)`
     position: absolute;
     text-decoration:none;
     top: 0;

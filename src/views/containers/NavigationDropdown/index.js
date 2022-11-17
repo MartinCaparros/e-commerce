@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { 
     StyledToggle,
     StyledItem,
@@ -7,14 +8,22 @@ import {
     StyledDropdownMenu,
     StyledLeftContainer, 
     StyledRightContainer,
-    StyledImageContainer
+    StyledImageContainer,
+    StyledDropdownToggle
 } from "./styled";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const NavigationDropdown = ({items, name, header, images}) => {
 
-    return (
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const isLG = useMediaQuery({ query: '(min-width: 1224px)'})
+    const isSM = useMediaQuery({ query: '(max-width: 500px)'})
+
+    return (<>
+        {isLG &&
             <StyledToggle>
                 { name }<KeyboardArrowDownIcon/>
                 <StyledDropdownMenu>
@@ -22,8 +31,10 @@ const NavigationDropdown = ({items, name, header, images}) => {
                         {header ? <StyledDropdownHeader>{header}</StyledDropdownHeader> : null}
                         { items.map( ({name, pill:{enabled, value}}) => {
                             return (
-                                <div>
-                                    <StyledItem> {name} 
+                                <div key={name}>
+                                    <StyledItem
+                                        to='#'
+                                    > {name} 
                                     { enabled ? <StyledPill>{value}</StyledPill> : null}
                                     </StyledItem>
                                 </div>
@@ -49,7 +60,24 @@ const NavigationDropdown = ({items, name, header, images}) => {
                     </StyledRightContainer>
                 </StyledDropdownMenu>
             </StyledToggle>
-    )
+        }
+        {
+            isSM &&
+            <StyledToggle>
+                <div className="toggleContainer">
+                    <StyledDropdownToggle>
+                        {name}
+                    </StyledDropdownToggle>
+                    <div className="iconContainer">
+                        {showDropdown
+                            ? <KeyboardArrowUpIcon/>
+                            : <KeyboardArrowDownIcon/>
+                        }
+                    </div>
+                </div>
+            </StyledToggle>
+        }
+    </>)
 }
 
 export default NavigationDropdown

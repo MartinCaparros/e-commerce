@@ -9,6 +9,10 @@ import SimpleSection from "./containers/SimpleSection";
 import ProductSection from "./containers/ProductSection";
 import MainProductBanner from "./containers/MainProductBanner";
 import CardContainer from "./containers/CardContainer";
+import DonationBanner from "./containers/DonationBanner";
+import DataBanner from "./containers/DataBanner";
+import PaymentLayout from "./containers/PaymentLayout";
+import HeadBanner from "./containers/HeadBanner";
 
 export {
     NavigationBar,
@@ -21,5 +25,9 @@ export {
     SimpleSection,
     ProductSection,
     MainProductBanner,
-    CardContainer
+    CardContainer,
+    DonationBanner,
+    DataBanner,
+    PaymentLayout,
+    HeadBanner
 }

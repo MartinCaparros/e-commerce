@@ -1,6 +1,8 @@
 import { Badge } from "react-bootstrap";
 import styled from "styled-components";
 import { theme } from "../../../styled";
+import { Dropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const StyledDropdown = styled.div`
 `;
@@ -25,6 +27,17 @@ export const StyledToggle = styled.div`
         }
     };
 
+    @media (max-width:500px) {
+        .toggleContainer {
+            width:100%;
+            display:flex;
+            .iconContainer {
+                width:50%;
+                display:flex;
+                justify-content:end;
+            }
+        }
+    }
 `;
 export const StyledDropdownMenu = styled.div`
     display:flex;
@@ -41,6 +54,12 @@ export const StyledDropdownMenu = styled.div`
     z-index: -1;
     background-color: white;
     transition: all 0.3s linear;
+    @media (max-width: 500px) {
+        flex-direction:column;
+        left:0px;
+        height:100%;
+        width:100%;
+    }
 `;
 
 export const StyledDropdownHeader = styled.p`
@@ -50,7 +69,7 @@ export const StyledDropdownHeader = styled.p`
     margin-left: 3rem;
 `;
 
-export const StyledItem = styled.a`
+export const StyledItem = styled(Link)`
     color: ${props => theme.blackCalm};
     text-decoration: none;
     width: fit-content;
@@ -87,10 +106,26 @@ export const StyledRightContainer = styled.div`
         color: ${props => theme.blackCalm}
     }
 `
-
 export const StyledImageContainer = styled.img`
     height:250px;
     width:430px;
     margin-top:10px;
     border-radius:20px;
 `
+
+
+export const StyledDropdownToggle = styled(Dropdown.Toggle)`
+    display:flex;
+    justify-content:start;
+    background-color: #fff;
+    border:none;
+    width:50%;
+
+    font-size:14px;
+    padding:0px;
+    color: ${props => theme.blackCalm};
+    height:auto;
+    &::after {
+        content:none
+    }
+` 

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.7.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.9",
@@ -17,6 +18,7 @@
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
     "eslint-visitor-keys": "^3.3.0",
+    "graphql": "^16.6.0",
     "jquery": "^3.6.1",
     "oauth-1.0a": "^2.2.6",
     "react": "^16.14.0",
@@ -25,6 +27,7 @@
     "react-responsive": "^9.0.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
+    "react-transition-group": "^4.4.5",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.19"

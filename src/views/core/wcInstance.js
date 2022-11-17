@@ -3,15 +3,13 @@ import Oauth from "oauth-1.0a";
 import CryptoJS from "crypto-js";
 import jQuery from "jquery";
 
-const ck = 'ck_5f8ed06b46588cc71f334d1b9184bb3480a640ff';
-const cs = 'cs_87f243f1dc30a50c95329d21c55dcb2356920f3b';
 const baseUrl = 'https://hipno.com.ar/wp-json/wc/v3';
 
 function getOauth() {
     return Oauth({
         consumer: {
-            key: ck,
-            secret: cs
+            key: process.env.REACT_APP_CLIENT_KEY_TEST,
+            secret: process.env.REACT_APP_CLIENT_PASS_TEST
             },
         signature_method: "HMAC-SHA1",
         hash_function: function(base_string, key) {
@@ -29,7 +27,7 @@ const makeRequest = (endpoint, method) => {
         method
     };
 
-    const requestHTTP = requestData.url + "?" + jQuery.param(oauth.authorize(requestData));
+    const requestHTTP = requestData.url + (requestData.url.includes('?') ? '&' : '?') + jQuery.param(oauth.authorize(requestData));
 
     return axios.get(requestHTTP);
 }
