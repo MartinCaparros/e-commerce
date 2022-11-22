@@ -37,4 +37,11 @@ export const StyledContainer = styled.div `
             }
         }
     }
+
+    @media (max-width:500px) {
+        .title {
+            font-size:1.25rem;
+            margin-bottom:10px;
+        }
+    }
 `

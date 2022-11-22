@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../styled";
 
@@ -8,10 +9,10 @@ export const StyledNavbar = styled.div`
     width:100%;
     margin:8px;
     @media (max-width: 500px) {
-        justify-content:space-between;
+        justify-content:center;
         .menuContainer {
             display:flex;
-            width:10em;
+            margin-right:auto;
             .burguer-menu {
                 height:100%;
                 display:flex;
@@ -43,13 +44,13 @@ export const StyledNavbar = styled.div`
             }
         }
         .menu {
-            height:200px;
+            height:auto;
+            margin-bottom:5px;
             width:100%;
             background-color:#fff;
             position:absolute;
             top:90px;
             z-index:99;
-            margin:0px;
             .dropdown {
                 transition: all 0.3s linear;
                 display:flex;
@@ -67,7 +68,7 @@ export const StyledNavbar = styled.div`
     }
 `;
 
-export const StyledNavLink = styled.a`
+export const StyledNavLink = styled(Link)`
     color: ${props => theme.blackCalm};
     margin-right: 8px;
     margin-left: 8px;
@@ -76,6 +77,9 @@ export const StyledNavLink = styled.a`
     :hover {
         color: ${props => theme.yellowCalm};
         text-decoration: underline;
+    }
+    @media (max-width: 500px) {
+        padding:10px 10px 10px;
     }
 `;
 

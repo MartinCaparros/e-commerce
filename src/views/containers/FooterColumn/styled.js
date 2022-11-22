@@ -28,4 +28,16 @@ export const StyledContainer = styled.div`
         font-size: 0.8rem;
         text-decoration: none;
     }
+
+    @media (max-width:500px) {
+        height:100%;
+        width:50%;
+        margin-bottom:0px;
+        margin-top:15px;
+        margin-left:20px;
+        .footerColumn {
+            display:flex;
+            flex-direction:column;
+        }
+    }
 `;

@@ -28,8 +28,8 @@ const NavigationBar = () => {
         <>
             {isLG && 
                 <StyledNavbar>
-                    <StyledNavLink href="#home">el colchón</StyledNavLink>
-                    <StyledNavLink href="#link">la base</StyledNavLink>
+                    <StyledNavLink to='/'>el colchón</StyledNavLink>
+                    <StyledNavLink to='/'>la base</StyledNavLink>
                     <NavigationDropdown
                         name={'almohadas'}
                         images = {[
@@ -71,9 +71,9 @@ const NavigationBar = () => {
                         header = {'NUESTROS ACCESORIOS'}
                     />
                     <StyledContainer>
-                        <StyledNavLink href="#home">localm</StyledNavLink>
-                        <StyledNavLink href="#link">nosotrxs</StyledNavLink>
-                        <StyledNavLink href="#link">blog</StyledNavLink>
+                        <StyledNavLink to='/'>localm</StyledNavLink>
+                        <StyledNavLink to='/'>nosotrxs</StyledNavLink>
+                        <StyledNavLink to='/'>blog</StyledNavLink>
                         <ShoppingBagOutlinedIcon fontSize="small" sx={{margin:'7px 40px 0px 100px', cursor:'pointer'}}/>
                     </StyledContainer>
                 </StyledNavbar>
@@ -136,8 +136,8 @@ const NavigationBar = () => {
                             <StyledNavLink href="#link">blog</StyledNavLink>
                         </div>
                     </div>
-                    <div><img src='https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_72,h_37/https://calmessimple.com.ar/wp-content/uploads/2022/05/Logo-Mobile.png' alt='logo'></img></div>
-                    <ShoppingBagOutlinedIcon fontSize="small" sx={{margin:'7px 40px 0px 100px', cursor:'pointer'}}/>
+                    <div><StyledNavLink to='/'><img src='https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_72,h_37/https://calmessimple.com.ar/wp-content/uploads/2022/05/Logo-Mobile.png' alt='logo'></img></StyledNavLink></div>
+                    <ShoppingBagOutlinedIcon fontSize="medium" sx={{margin:'7px 10px 0px auto', cursor:'pointer'}}/>
                 </StyledNavbar>
             }
         </>

@@ -1,3 +1,4 @@
+import { Dropdown } from "react-bootstrap";
 import styled from "styled-components";
 import { theme } from "../../../styled/index";
 
@@ -25,5 +26,34 @@ export const StyledContainer = styled.div`
                 color: ${props => theme.blackCalm};
             }
         }
+    }
+    `
+export const StyledDropdown = styled(Dropdown)`
+    width:100%;
+    .toggleContainer {
+        width:100%;
+        padding:15px;
+        display:flex;
+        justify-content:space-between;
+        .iconContainer {
+        }
+    }
+    .dropdownDiv {
+        display:flex;
+        justify-content:center;
+        color:#666666;
+        font-size:13px;
+        padding:0px 30px 0px 30px;
+    }
+`
+export const StyledDropdownToggle = styled(Dropdown.Toggle)`
+    display:flex;
+    font-size:1rem;
+    padding:0px;
+    background-color: #fff;
+    color: ${props => theme.strongOrangeCalm};
+    border:none;
+    &::after {
+        content:none
     }
 `

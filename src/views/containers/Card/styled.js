@@ -38,6 +38,16 @@ export const StyledContainer = styled.div`
             text-decoration: line-through;
         }
     }
+
+    @media (max-width:500px) {
+        .card {
+            height:250px;
+            width:230px;
+            .pill {
+                bottom:165px;
+            }
+        }
+    }
 `
 export const StyledPill = styled(Badge)`
     color: #fff;

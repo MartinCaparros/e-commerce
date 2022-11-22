@@ -10,8 +10,9 @@ export const StyledButton = styled.div`
     color : ${props => props.color};
     font-size: ${props => props.fontSize};
     height: ${props => props.height};
-    border-radius: 8px 8px 8px 8px;
+    border-radius: ${props => props.borderRadius};
     width: ${props => props.width};
+    border : ${props => props.border};
     &:hover {
         background-color: ${props => props.backgroundColorHover};
         color : ${props => props.colorHover};
@@ -22,6 +23,9 @@ export const StyledButton = styled.div`
 `
 
 export const StyledDiv = styled.div`
+    display:flex;
+    justify-content:center;
+    align-items:center;
     height: ${props => props.maxHeight};
     width: ${props => props.maxWidth}
 `

@@ -51,4 +51,9 @@ export const StyledContainer = styled.div`
             margin:5px;
         }
     }
+
+    @media (max-width: 500px) {
+        align-items:center;
+        height:100%;
+    }
 `;

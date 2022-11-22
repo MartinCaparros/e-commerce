@@ -1,6 +1,6 @@
 import { StyledButton, StyledDiv } from "./styled";
 
-const Button = ({text, backgroundColor, color, fontSize, height, width, backgroundColorHover, colorHover, maxHeight, maxWidth, fontWeight}) => {
+const Button = ({text, backgroundColor, color, fontSize, height, width, backgroundColorHover, colorHover, maxHeight, maxWidth, fontWeight, borderRadius, border}) => {
     return ( 
         <StyledDiv
             maxHeight = {maxHeight}
@@ -17,6 +17,8 @@ const Button = ({text, backgroundColor, color, fontSize, height, width, backgrou
                 fontWeight = {fontWeight}
                 maxHeight = {maxHeight}
                 maxWidth = {maxWidth}
+                borderRadius = {borderRadius}
+                border = {border}
             >
                 {text}
             </StyledButton> 

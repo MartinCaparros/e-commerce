@@ -22,6 +22,14 @@ const NavigationDropdown = ({items, name, header, images}) => {
     const isLG = useMediaQuery({ query: '(min-width: 1224px)'})
     const isSM = useMediaQuery({ query: '(max-width: 500px)'})
 
+    const dropMenu = () => {
+        if (showDropdown) {
+            setShowDropdown(false)
+        } else {
+            setShowDropdown(true)
+        }
+    }
+
     return (<>
         {isLG &&
             <StyledToggle>
@@ -63,19 +71,38 @@ const NavigationDropdown = ({items, name, header, images}) => {
         }
         {
             isSM &&
-            <StyledToggle>
-                <div className="toggleContainer">
-                    <StyledDropdownToggle>
-                        {name}
-                    </StyledDropdownToggle>
-                    <div className="iconContainer">
-                        {showDropdown
-                            ? <KeyboardArrowUpIcon/>
-                            : <KeyboardArrowDownIcon/>
-                        }
+            <div>
+                <StyledToggle>
+                    <div className="toggleContainer" onClick={dropMenu}>
+                        <StyledDropdownToggle>
+                            {name}
+                        </StyledDropdownToggle>
+                        <div className="iconContainer">
+                            {showDropdown
+                                ? <KeyboardArrowUpIcon/>
+                                : <KeyboardArrowDownIcon/>
+                            }
+                        </div>
                     </div>
+                </StyledToggle>
+                <div>
+                    {showDropdown && header && <StyledDropdownHeader>{header}</StyledDropdownHeader>}
+                    {
+                        showDropdown && items.map(({name, pill:{enabled, value}}) => {
+                            return(  
+                                <>
+                                    <div key={name}>
+                                        <StyledItem
+                                            to='#'
+                                        > {name} 
+                                        { enabled ? <StyledPill>{value}</StyledPill> : null}
+                                        </StyledItem>
+                                    </div>
+                            </>
+                            )})
+                    }
                 </div>
-            </StyledToggle>
+            </div>
         }
     </>)
 }

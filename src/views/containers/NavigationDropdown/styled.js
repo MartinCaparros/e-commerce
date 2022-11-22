@@ -28,13 +28,42 @@ export const StyledToggle = styled.div`
     };
 
     @media (max-width:500px) {
+        padding:10px 10px 10px 0px;
+        margin-left:8px;
+        &:focus-within {
+                background-color: #C4C4C4;
+                color:#fff;
+        }
+        &:hover {
+            text-decoration:none;
+            color:white;
+            div {
+                transition: all 0s ease;
+            }
+        }
         .toggleContainer {
+            height:100%;
             width:100%;
+            margin-left:8px;
             display:flex;
+            &:focus-within {
+                background-color: #C4C4C4;
+                color:#fff;
+            }
+            .btn:hover {
+                background-color: #C4C4C4;
+                outline:none;
+                box-shadow:none;
+                transition:0s;
+                text-decoration: underline;
+            }
             .iconContainer {
                 width:50%;
                 display:flex;
                 justify-content:end;
+                &:focus {
+                    background-color: #C4C4C4;
+                }
             }
         }
     }
@@ -67,6 +96,10 @@ export const StyledDropdownHeader = styled.p`
     color: ${props => theme.greyCalm};
     width: fit-content;
     margin-left: 3rem;
+    @media (max-width: 500px) {
+        color: #c4c4c4;
+        margin:20px 0px 10px 20px;
+    }
 `;
 
 export const StyledItem = styled(Link)`
@@ -77,6 +110,9 @@ export const StyledItem = styled(Link)`
     :hover {
         color: ${props => theme.yellowCalm};
         background-color: white;
+    }
+    @media (max-width: 500px) {
+        margin:20px 0px 10px 20px;
     }
 `
 
@@ -120,7 +156,7 @@ export const StyledDropdownToggle = styled(Dropdown.Toggle)`
     background-color: #fff;
     border:none;
     width:50%;
-
+    text-decoration:none;
     font-size:14px;
     padding:0px;
     color: ${props => theme.blackCalm};

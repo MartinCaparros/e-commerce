@@ -19,8 +19,13 @@ from '../views';
 import 'bootstrap/dist/css/bootstrap.css';
 import { theme } from '../styled/index'; 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
+import { getProductCards } from '../views/core/apolloServices/ProductCards'
+import { getNewProductCards } from '../views/core/apolloServices/NewProductCards'
 
 function App() {
+    const isLG = useMediaQuery({ query: '(min-width: 1224px)'})
+
     return (
         <Router>
             <Switch>
@@ -42,12 +47,10 @@ function App() {
                         <Route path='/' exact>
                             <main>
                                 <MainBanner
-                                    backgroundImage='https://calmessimple.com.ar/wp-content/uploads/2022/10/banner-almohadas-de-regalo2.webp'
-                                    date={'hasta el 23 de octubre'}
-                                    mainInfo = {{important: 'almohadas de regalo', secondary: 'comprando tu colchón'}}
+                                    bannerId={'clall9rmivloy0akaseim342o'}
                                 />
                                 <Banner
-                                    height={'90px'}
+                                    height={ isLG ? '90px' : '70px'}
                                     width={'100%'}
                                     backgroundColor={props => theme.strongOrangeCalm}
                                     textAlign={'center'}
@@ -63,11 +66,18 @@ function App() {
                                 <PromotionBanner/>
                                 <SimpleSection/>
                                 <ProductSection/>
-                                <MainProductBanner/>
+                                <MainProductBanner
+                                    bannerId='clams2rpoaltn0akauya9mps2'
+                                />
                                 <CardContainer
-                                    text = {{normal:'completa tu descanso', important: 'ideal'}}
+                                    text= {{normal:'completa tu descanso', important: 'ideal'}}
+                                    query= {getProductCards}
                                 />
                                 <DonationBanner/>
+                                <CardContainer
+                                    text={{normal:'nuevos', important:'lanzamientos'}}
+                                    query = {getNewProductCards}
+                                />
                                 <DataBanner/>
                             </main>
                         </Route>

@@ -22,5 +22,9 @@ export const StyledBanner = styled.div`
             max-width:100%;
             max-height:100%
         }
+        @media (max-width:500px) {
+            width:100%;
+            padding:10px;
+        }
     }
 `;

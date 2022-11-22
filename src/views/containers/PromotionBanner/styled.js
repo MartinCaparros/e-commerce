@@ -33,4 +33,24 @@ export const StyledContainer = styled.div`
             }
         }
     }
+
+    @media (max-width: 500px) {
+        width:100%;
+        height:290px;
+        .promotionDiv {
+            width:90%;
+            font-size:1.5rem;
+            .positionDiv {
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                .dataDiv{
+                    .promInfo {
+                        font-size:2.5rem;
+                    }
+                }
+            }
+        }
+    }
 `;

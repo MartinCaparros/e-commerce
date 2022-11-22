@@ -11,4 +11,11 @@ export const StyledContainer = styled.div`
     .cardHolder {
         display:flex
     }
+
+    @media (max-width:500px) {
+        margin-top:0px;
+        .cardHolder {
+            height:100%;
+        }
+    }
 `
