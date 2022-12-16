@@ -36,10 +36,10 @@ const NavigationBar = () => {
                             {src: 'https://calmessimple.com.ar/wp-content/uploads/2022/05/almohada-infinita-1.webp', text: 'almohada infinita'},
                             {src: 'https://calmessimple.com.ar/wp-content/uploads/2022/05/alta-almohada-1.webp', text: 'alta almohada'}]}
                         items={[
-                            {name: 'alta almohada', pill: {enabled: true, value: 'MÁS VENDIDA'}},
-                            {name: 'almohada doble sensación', pill: {enabled: false, value: 'MÁS VENDIDA'}},
-                            {name: 'almohada infinita', pill: {enabled: false, value: 'MÁS VENDIDA'}},
-                            {name: 'almohada inteligente', pill: {enabled: false, value: 'MÁS VENDIDA'}}
+                            {name: 'alta almohada', pill: {enabled: true, value: 'MÁS VENDIDA'}, href: '/producto/almohadas/almohada-calm'},
+                            {name: 'almohada doble sensación', pill: {enabled: false, value: 'MÁS VENDIDA'}, href: '/producto/almohadas/almohada-infinita'},
+                            {name: 'almohada infinita', pill: {enabled: false, value: 'MÁS VENDIDA'}, href: '/producto/almohadas/almohada-calm'},
+                            {name: 'almohada inteligente', pill: {enabled: false, value: 'MÁS VENDIDA'}, href: '/producto/almohadas/almohada-calm'}
                         ]}
                         header = {'NUESTRAS ALMOHADAS'}
                     />

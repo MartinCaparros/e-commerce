@@ -44,7 +44,7 @@ function App() {
                         />
                     </header>
                     <Switch>
-                        <Route path='/' exact>
+                        <Route path='/'>
                             <main>
                                 <MainBanner
                                     bannerId={'clall9rmivloy0akaseim342o'}
@@ -84,7 +84,7 @@ function App() {
                         <Route path='/colchón'>
                             <h1>Colchones</h1>
                         </Route>
-                        <Route path='/*'>404</Route>
+                        {/* <Route path='/*'>404</Route> */}
                     </Switch>
                     <Footer/>    
                 </Route>

@@ -37,7 +37,7 @@ const NavigationDropdown = ({items, name, header, images}) => {
                 <StyledDropdownMenu>
                     <StyledLeftContainer>
                         {header ? <StyledDropdownHeader>{header}</StyledDropdownHeader> : null}
-                        { items.map( ({name, pill:{enabled, value}}) => {
+                        { items.map( ({name, pill:{enabled, value}, href}) => {
                             return (
                                 <div key={name}>
                                     <StyledItem
@@ -88,12 +88,12 @@ const NavigationDropdown = ({items, name, header, images}) => {
                 <div>
                     {showDropdown && header && <StyledDropdownHeader>{header}</StyledDropdownHeader>}
                     {
-                        showDropdown && items.map(({name, pill:{enabled, value}}) => {
+                        showDropdown && items.map(({name, pill:{enabled, value}, href}) => {
                             return(  
                                 <>
                                     <div key={name}>
                                         <StyledItem
-                                            to='#'
+                                            to={href}
                                         > {name} 
                                         { enabled ? <StyledPill>{value}</StyledPill> : null}
                                         </StyledItem>
