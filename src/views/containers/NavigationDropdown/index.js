@@ -18,7 +18,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const NavigationDropdown = ({items, name, header, images}) => {
 
     const [showDropdown, setShowDropdown] = useState(false);
-
     const isLG = useMediaQuery({ query: '(min-width: 1224px)'})
     const isSM = useMediaQuery({ query: '(max-width: 500px)'})
 
@@ -41,7 +40,7 @@ const NavigationDropdown = ({items, name, header, images}) => {
                             return (
                                 <div key={name}>
                                     <StyledItem
-                                        to='#'
+                                        to={href}
                                     > {name} 
                                     { enabled ? <StyledPill>{value}</StyledPill> : null}
                                     </StyledItem>
